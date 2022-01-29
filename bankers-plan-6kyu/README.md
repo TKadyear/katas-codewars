@@ -1,3 +1,4 @@
+# Banker's Plan - 6kyu
 John has some amount of money of which he wants to deposit a part f0 to the bank at the beginning of year 1. He wants to withdraw each year for his living an amount c0.
 
 Here is his banker plan:
