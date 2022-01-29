@@ -1,6 +1,6 @@
 const whoLikes = require('./wholikes');
 
-describe('minMaxArray', () => {
+describe('Who likes ', () => {
   test('If no one likes this', () => {
     expect(whoLikes([])).toBe("no one likes this");
   });
