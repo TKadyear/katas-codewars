@@ -1,17 +1,18 @@
-function whoLikes(list) {
-  const NumberPersons = list.length
-  let response = '';
-  if (NumberPersons === 0) {
-    response = 'no one likes this';
-  } else if (NumberPersons === 1) {
-    response = `${list[0]} likes this`;
-  } else if (NumberPersons === 2) {
-    response = `${list[0]} and ${list[1]} like this`;
-  } else if (NumberPersons === 3) {
-    response = `${list[0]}, ${list[1]} and ${list[2]} like this`;
-  } else if (NumberPersons > 3) {
-    response += `${list[0]}, ${list[1]} and ${NumberPersons - 2} others like this`
+function whoLikes(names) {
+  const NumberOfNames = names.length;
+  let reply = '';
+  if (NumberOfNames === 1) {
+    reply = `${names[0]} likes this`;
+  } else if (NumberOfNames === 2) {
+    reply = `${names.slice(0, 2).join(' and ')} like this`;
+  } else if (NumberOfNames >= 3) {
+    const whoElse = NumberOfNames > 3
+      ? `${NumberOfNames - 2} others like this`
+      : `${names[NumberOfNames - 1]} like this`;
+    reply = `${[...names].slice(0, 2).join(', ')} and ${whoElse}`;
+  } else {
+    reply = 'no one likes this';
   }
-  return response
+  return reply;
 }
 module.exports = whoLikes;

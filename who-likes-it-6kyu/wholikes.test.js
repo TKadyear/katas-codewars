@@ -14,7 +14,7 @@ describe('Who likes ', () => {
     expect(whoLikes(['Gema', 'Sofía', 'Lucía'])).toBe("Gema, Sofía and Lucía like this");
   });
   test('If more than 4 persons likes this', () => {
-    const listPersonLikes = ['Gema', 'Sofía', 'Lucía', 'David'];
-    expect(whoLikes(listPersonLikes)).toBe(`${listPersonLikes[0]}, ${listPersonLikes[1]} and ${listPersonLikes.length - 2} others like this`);
+    const namesPeople = ['Gema', 'Sofía', 'Lucía', 'David'];
+    expect(whoLikes(namesPeople)).toBe(`${namesPeople[0]}, ${namesPeople[1]} and ${namesPeople.length - 2} others like this`);
   });
 });
