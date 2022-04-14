@@ -1,4 +1,4 @@
-const decoderRomanNumerals = require('./roman-numerals')
+const decoderRomanNumerals = require('./roman-numerals-decoder')
 describe('Roman-numerals', () => {
   test('One', () => {
     expect(decoderRomanNumerals('I')).toBe(1);
