@@ -1,52 +1,34 @@
 function protein(rna) {
   const AminoAcidDictionary = {
-    // Phenylalanine
-    'UUC': 'F', 'UUU': 'F',
-    // Leucine
-    'UUA': 'L', 'UUG': 'L', 'CUU': 'L', 'CUC': 'L', 'CUA': 'L', 'CUG': 'L',
-    // Isoleucine
-    'AUU': 'I', 'AUC': 'I', 'AUA': 'I',
-    // Methionine
-    'AUG': 'M',
-    // Valine
-    'GUU': 'V', 'GUC': 'V', 'GUA': 'V', 'GUG': 'V',
-    // Serine
-    'UCU': 'S', 'UCC': 'S', 'UCA': 'S', 'UCG': 'S', 'AGU': 'S', 'AGC': 'S',
-    // Proline
-    'CCU': 'P', 'CCC': 'P', 'CCA': 'P', 'CCG': 'P',
-    // Threonine
-    'ACU': 'T', 'ACC': 'T', 'ACA': 'T', 'ACG': 'T',
-    // Alanine
-    'GCU': 'A', 'GCC': 'A', 'GCA': 'A', 'GCG': 'A',
-    // Tyrosine
-    'UAU': 'Y', 'UAC': 'Y',
-    // Histidine
-    'CAU': 'H', 'CAC': 'H',
-    // Glutamine
-    'CAA': 'Q', 'CAG': 'Q',
-    // Asparagine
-    'AAU': 'N', 'AAC': 'N',
-    // Lysine
-    'AAA': 'K', 'AAG': 'K',
-    // Aspartic Acid
-    'GAU': 'D', 'GAC': 'D',
-    // Glutamic Acid
-    'GAA': 'E', 'GAG': 'E',
-    // Cystine
-    'UGU': 'C', 'UGC': 'C',
-    // Tryptophan
-    'UGG': 'W',
-    // Arginine
-    'CGU': 'R', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R', 'AGA': 'R', 'AGG': 'R',
-    // Glycine
-    'GGU': 'G', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G',
-    // Stop codon
-    'UAA': '', 'UGA': '', 'UAG': '',
+    'F': ['UUC', 'UUU'],// Phenylalanine
+    'L': ['UUA', 'UUG', 'CUU', 'CUC', 'CUA', 'CUG'], // Leucine
+    'I': ['AUU', 'AUC', 'AUA'],// Isoleucine
+    'M': ['AUG'],// Methionine
+    'V': ['GUU', 'GUC', 'GUA', 'GUG'],// Valine
+    'S': ['UCU', 'UCC', 'UCA', 'UCG', 'AGU', 'AGC'],// Serine
+    'P': ['CCU', 'CCC', 'CCA', 'CCG'],  // Proline
+    'T': ['ACU', 'ACC', 'ACA', 'ACG'],  // Threonine
+    'A': ['GCU', 'GCC', 'GCA', 'GCG'],// Alanine
+    'Y': ['UAU', 'UAC'], // Tyrosine
+    'H': ['CAU', 'CAC'],  // Histidine
+    'Q': ['CAA', 'CAG'],  // Glutamine
+    'N': ['AAU', 'AAC'],  // Asparagine
+    'K': ['AAA', 'AAG'],  // Lysine
+    'D': ['GAU', 'GAC'],  // Aspartic Acid
+    'E': ['GAA', 'GAG'], // Glutamic Acid
+    'C': ['UGU', 'UGC'],  // Cystine
+    'W': ['UGG'], // Tryptophan
+    'R': ['CGU', 'CGC', 'CGA', 'CGG', 'AGA', 'AGG'],  // Arginine
+    'G': ['GGU', 'GGC', 'GGA', 'GGG'], // Glycine
+    'Stop': ['UAA', 'UGA', 'UAG']// Stop codon
   }
-  let chainProtein = "";
-  for (let start = 0; start < rna.length; start += 3) {
-    chainProtein += AminoAcidDictionary[rna.substr(start, 3)];
-  }
-  return chainProtein;
+  let chainProtein = rna.match(/.{1,3}/g).map(element => {
+    for (const [key, value] of Object.entries(AminoAcidDictionary)) {
+      if (value.includes(element)) {
+        return (key === 'Stop') ? '' : key;
+      }
+    }
+  });
+  return chainProtein.join("");
 }
 module.exports = protein;

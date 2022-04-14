@@ -97,15 +97,15 @@ describe('Amino Acid Unique ', () => {
     expect(protein('AGG')).toBe('R');
   });
   test('Glycine', () => {
-    expect(protein('GUU')).toBe('G');
+    expect(protein('GGU')).toBe('G');
     expect(protein('GGC')).toBe('G');
     expect(protein('GGA')).toBe('G');
     expect(protein('GGG')).toBe('G');
   });
   test('Stop codon', () => {
-    expect(protein('UAA')).toBe('Stop');
-    expect(protein('UGA')).toBe('Stop');
-    expect(protein('UAG')).toBe('Stop');
+    expect(protein('UAA')).toBe('');
+    expect(protein('UGA')).toBe('');
+    expect(protein('UAG')).toBe('');
   });
 });
 
