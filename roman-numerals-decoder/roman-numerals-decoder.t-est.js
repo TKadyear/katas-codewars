@@ -1,4 +1,6 @@
-const decoderRomanNumerals = require('./roman-numerals-decoder')
+import { test, describe } from "node:test";
+import { decoderRomanNumerals } from "./roman-numerals-decoder.js";
+
 describe('Roman-numerals', () => {
   test('One', () => {
     expect(decoderRomanNumerals('I')).toBe(1);

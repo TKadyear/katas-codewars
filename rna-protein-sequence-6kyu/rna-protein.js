@@ -1,4 +1,4 @@
-function protein(rna) {
+export function protein(rna) {
   const AminoAcidDictionary = {
     'F': ['UUC', 'UUU'],// Phenylalanine
     'L': ['UUA', 'UUG', 'CUU', 'CUC', 'CUA', 'CUG'], // Leucine
@@ -31,4 +31,3 @@ function protein(rna) {
   });
   return chainProtein.join("");
 }
-module.exports = protein;

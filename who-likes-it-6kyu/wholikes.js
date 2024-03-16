@@ -1,4 +1,4 @@
-function whoLikes(names) {
+export function whoLikes(names) {
   const NumberOfNames = names.length;
   let reply = '';
   if (NumberOfNames === 1) {
@@ -15,4 +15,3 @@ function whoLikes(names) {
   }
   return reply;
 }
-module.exports = whoLikes;

@@ -1,4 +1,5 @@
-const whoLikes = require('./wholikes');
+import {test,describe} from "node:test";
+import { whoLikes } from "./wholikes.js";
 
 describe('Who likes ', () => {
   test('If no one likes this', () => {

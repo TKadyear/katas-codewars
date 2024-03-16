@@ -1,4 +1,5 @@
-const persistence = require("./persistent-bugger");
+import { test, describe } from "node:test";
+import { persistence } from "./persistent-bugger.js";
 
 describe("Introduce only one digit", () => {
   test("Number 0", () => {

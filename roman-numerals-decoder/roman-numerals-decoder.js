@@ -1,4 +1,4 @@
-const decoderRomanNumerals = (roman) => {
+export const decoderRomanNumerals = (roman) => {
   const decoder = {
     'I': 1,
     'V': 5,
@@ -12,4 +12,3 @@ const decoderRomanNumerals = (roman) => {
   return slicesRoman.map(num => decoder[num]).reduce((prev, curr) => prev + curr);
 };
 
-module.exports = decoderRomanNumerals;

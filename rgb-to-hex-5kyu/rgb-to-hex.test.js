@@ -1,4 +1,5 @@
-const { hexConversion } = require("./rgb-to-hex")
+import { test, describe } from "node:test";
+import { hexConversion } from "./rgb-to-hex.js";
 
 describe("RGB color in range 0 to 255", () => {
   test('case 1', () => {

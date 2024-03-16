@@ -1,4 +1,6 @@
-const bankersPlan = require('./bankersplan')
+import { test, describe } from "node:test";
+import { bankersPlan } from "./bankersplan.js";
+
 describe('Banking Plan', () => {
   test('Plan 1', () => {
     expect(bankersPlan(100000, 1, 2000, 15, 1)).toBeTruthy();

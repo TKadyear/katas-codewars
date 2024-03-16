@@ -1,4 +1,6 @@
-const changeToRomanNumerals = require('./roman-numerals')
+import { test, describe } from "node:test";
+import { changeToRomanNumerals } from "./roman-numerals.js";
+
 describe('Roman-numerals', () => {
   test('One', () => {
     expect(changeToRomanNumerals(1)).toBe('I');

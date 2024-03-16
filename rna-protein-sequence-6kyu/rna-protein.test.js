@@ -1,4 +1,5 @@
-const protein = require('./rna-protein');
+import { test, describe } from "node:test";
+import { protein } from "./rna-protein.js";
 
 describe('Amino Acid Unique ', () => {
   test('Phenylalanine', () => {
