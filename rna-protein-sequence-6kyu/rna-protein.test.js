@@ -1,123 +1,124 @@
 import { test, describe } from "node:test";
+import  assert  from "node:assert";
 import { protein } from "./rna-protein.js";
 
 describe('Amino Acid Unique ', () => {
   test('Phenylalanine', () => {
-    expect(protein('UUC')).toBe('F');
-    expect(protein('UUU')).toBe('F');
+    assert.equal(protein('UUC'), 'F');
+    assert.equal(protein('UUU'), 'F');
   });
   test('Leucine', () => {
-    expect(protein('UUA')).toBe('L');
-    expect(protein('UUG')).toBe('L');
-    expect(protein('CUU')).toBe('L');
-    expect(protein('CUC')).toBe('L');
-    expect(protein('CUA')).toBe('L');
-    expect(protein('CUG')).toBe('L');
+    assert.equal(protein('UUA'), 'L');
+    assert.equal(protein('UUG'), 'L');
+    assert.equal(protein('CUU'), 'L');
+    assert.equal(protein('CUC'), 'L');
+    assert.equal(protein('CUA'), 'L');
+    assert.equal(protein('CUG'), 'L');
   });
   test('Isoleucine', () => {
-    expect(protein('AUU')).toBe('I');
-    expect(protein('AUC')).toBe('I');
-    expect(protein('AUA')).toBe('I');
+    assert.equal(protein('AUU'), 'I');
+    assert.equal(protein('AUC'), 'I');
+    assert.equal(protein('AUA'), 'I');
   });
   test('Methionine', () => {
-    expect(protein('AUG')).toBe('M');
+    assert.equal(protein('AUG'), 'M');
   });
   test('Valine', () => {
-    expect(protein('GUU')).toBe('V');
-    expect(protein('GUC')).toBe('V');
-    expect(protein('GUA')).toBe('V');
-    expect(protein('GUG')).toBe('V');
+    assert.equal(protein('GUU'), 'V');
+    assert.equal(protein('GUC'), 'V');
+    assert.equal(protein('GUA'), 'V');
+    assert.equal(protein('GUG'), 'V');
   });
   test('Serine', () => {
-    expect(protein('UCU')).toBe('S');
-    expect(protein('UCC')).toBe('S');
-    expect(protein('UCA')).toBe('S');
-    expect(protein('UCG')).toBe('S');
-    expect(protein('AGU')).toBe('S');
-    expect(protein('AGC')).toBe('S');
+    assert.equal(protein('UCU'), 'S');
+    assert.equal(protein('UCC'), 'S');
+    assert.equal(protein('UCA'), 'S');
+    assert.equal(protein('UCG'), 'S');
+    assert.equal(protein('AGU'), 'S');
+    assert.equal(protein('AGC'), 'S');
   });
   test('Proline', () => {
-    expect(protein('CCU')).toBe('P');
-    expect(protein('CCC')).toBe('P');
-    expect(protein('CCA')).toBe('P');
-    expect(protein('CCG')).toBe('P');
+    assert.equal(protein('CCU'), 'P');
+    assert.equal(protein('CCC'), 'P');
+    assert.equal(protein('CCA'), 'P');
+    assert.equal(protein('CCG'), 'P');
   });
   test('Threonine', () => {
-    expect(protein('ACU')).toBe('T');
-    expect(protein('ACC')).toBe('T');
-    expect(protein('ACA')).toBe('T');
-    expect(protein('ACG')).toBe('T');
+    assert.equal(protein('ACU'), 'T');
+    assert.equal(protein('ACC'), 'T');
+    assert.equal(protein('ACA'), 'T');
+    assert.equal(protein('ACG'), 'T');
   });
   test('Alanine', () => {
-    expect(protein('GCU')).toBe('A');
-    expect(protein('GCC')).toBe('A');
-    expect(protein('GCA')).toBe('A');
-    expect(protein('GCG')).toBe('A');
+    assert.equal(protein('GCU'), 'A');
+    assert.equal(protein('GCC'), 'A');
+    assert.equal(protein('GCA'), 'A');
+    assert.equal(protein('GCG'), 'A');
   });
   test('Tyrosine', () => {
-    expect(protein('UAU')).toBe('Y');
-    expect(protein('UAC')).toBe('Y');
+    assert.equal(protein('UAU'), 'Y');
+    assert.equal(protein('UAC'), 'Y');
   });
   test('Histidine', () => {
-    expect(protein('CAU')).toBe('H');
-    expect(protein('CAC')).toBe('H');
+    assert.equal(protein('CAU'), 'H');
+    assert.equal(protein('CAC'), 'H');
   });
   test('Glutamine', () => {
-    expect(protein('CAA')).toBe('Q');
-    expect(protein('CAG')).toBe('Q');
+    assert.equal(protein('CAA'), 'Q');
+    assert.equal(protein('CAG'), 'Q');
   });
   test('Asparagine', () => {
-    expect(protein('AAU')).toBe('N');
-    expect(protein('AAC')).toBe('N');
+    assert.equal(protein('AAU'), 'N');
+    assert.equal(protein('AAC'), 'N');
   });
   test('Lysine', () => {
-    expect(protein('AAA')).toBe('K');
-    expect(protein('AAG')).toBe('K');
+    assert.equal(protein('AAA'), 'K');
+    assert.equal(protein('AAG'), 'K');
   });
   test('Aspartic Acid', () => {
-    expect(protein('GAU')).toBe('D');
-    expect(protein('GAC')).toBe('D');
+    assert.equal(protein('GAU'), 'D');
+    assert.equal(protein('GAC'), 'D');
   });
   test('Glutamic Acid', () => {
-    expect(protein('GAA')).toBe('E');
-    expect(protein('GAG')).toBe('E');
+    assert.equal(protein('GAA'), 'E');
+    assert.equal(protein('GAG'), 'E');
   });
   test('Cystine', () => {
-    expect(protein('UGU')).toBe('C');
-    expect(protein('UGC')).toBe('C');
+    assert.equal(protein('UGU'), 'C');
+    assert.equal(protein('UGC'), 'C');
   });
   test('Tryptophan', () => {
-    expect(protein('UGG')).toBe('W');
+    assert.equal(protein('UGG'), 'W');
   });
   test('Arginine', () => {
-    expect(protein('CGU')).toBe('R');
-    expect(protein('CGC')).toBe('R');
-    expect(protein('CGA')).toBe('R');
-    expect(protein('AGG')).toBe('R');
-    expect(protein('AGA')).toBe('R');
-    expect(protein('AGG')).toBe('R');
+    assert.equal(protein('CGU'), 'R');
+    assert.equal(protein('CGC'), 'R');
+    assert.equal(protein('CGA'), 'R');
+    assert.equal(protein('AGG'), 'R');
+    assert.equal(protein('AGA'), 'R');
+    assert.equal(protein('AGG'), 'R');
   });
   test('Glycine', () => {
-    expect(protein('GGU')).toBe('G');
-    expect(protein('GGC')).toBe('G');
-    expect(protein('GGA')).toBe('G');
-    expect(protein('GGG')).toBe('G');
+    assert.equal(protein('GGU'), 'G');
+    assert.equal(protein('GGC'), 'G');
+    assert.equal(protein('GGA'), 'G');
+    assert.equal(protein('GGG'), 'G');
   });
   test('Stop codon', () => {
-    expect(protein('UAA')).toBe('');
-    expect(protein('UGA')).toBe('');
-    expect(protein('UAG')).toBe('');
+    assert.equal(protein('UAA'), '');
+    assert.equal(protein('UGA'), '');
+    assert.equal(protein('UAG'), '');
   });
 });
 
 describe('Combination ', () => {
   test('Case 1', () => {
-    expect(protein('UGCGAUGAAUGGGCUCGCUCC')).toBe('CDEWARS');
+    assert.equal(protein('UGCGAUGAAUGGGCUCGCUCC'), 'CDEWARS');
   });
   test('Case 2', () => {
-    expect(protein('UUCAUUAAUGAG')).toBe('FINE');
+    assert.equal(protein('UUCAUUAAUGAG'), 'FINE');
   });
   test('Case 3', () => {
-    expect(protein('ACCGAAAGCACG')).toBe('TEST');
+    assert.equal(protein('ACCGAAAGCACG'), 'TEST');
   });
 });
