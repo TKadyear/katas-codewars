@@ -7,8 +7,8 @@ const decoderRomanNumerals = (roman) => {
     'C': 100,
     'D': 500,
     'M': 1_000
-  }
-  const slicesRoman = roman.match(/./g)
+  };
+  const slicesRoman = roman.match(/./g);
   return slicesRoman.map(num => decoder[num]).reduce((prev, curr) => prev + curr);
 };
 
