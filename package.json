@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=v18.16.0"
+  },
   "scripts": {
-    "test": "jest",
-    "watch": "jest --watchAll"
+    "test": "node --test",
+    "watch": "npm run test -- --watchAll"
   },
   "repository": {
     "type": "git",
@@ -17,8 +21,5 @@
   "bugs": {
     "url": "https://github.com/TKadyear/katas-codewars/issues"
   },
-  "homepage": "https://github.com/TKadyear/katas-codewars#readme",
-  "devDependencies": {
-    "jest": "^27.4.7"
-  }
+  "homepage": "https://github.com/TKadyear/katas-codewars#readme"
 }

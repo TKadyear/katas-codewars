@@ -1,71 +1,74 @@
-const changeToRomanNumerals = require('./roman-numerals')
+import { test, describe } from "node:test";
+import  assert  from "node:assert";
+import { changeToRomanNumerals } from "./roman-numerals.js";
+
 describe('Roman-numerals', () => {
   test('One', () => {
-    expect(changeToRomanNumerals(1)).toBe('I');
+    assert.equal(changeToRomanNumerals(1), 'I');
   })
   test('Two', () => {
-    expect(changeToRomanNumerals(2)).toBe('II');
+    assert.equal(changeToRomanNumerals(2), 'II');
   })
   test('Three', () => {
-    expect(changeToRomanNumerals(3)).toBe('III');
+    assert.equal(changeToRomanNumerals(3), 'III');
   })
   test('Four', () => {
-    expect(changeToRomanNumerals(4)).toBe('IV');
+    assert.equal(changeToRomanNumerals(4), 'IV');
   })
   test('Five', () => {
-    expect(changeToRomanNumerals(5)).toBe('V');
+    assert.equal(changeToRomanNumerals(5), 'V');
   })
   test('Six', () => {
-    expect(changeToRomanNumerals(6)).toBe('VI');
+    assert.equal(changeToRomanNumerals(6), 'VI');
   })
   test('Seven', () => {
-    expect(changeToRomanNumerals(7)).toBe('VII');
+    assert.equal(changeToRomanNumerals(7), 'VII');
   })
   test('Eight', () => {
-    expect(changeToRomanNumerals(8)).toBe('VIII');
+    assert.equal(changeToRomanNumerals(8), 'VIII');
   })
   test('Nine', () => {
-    expect(changeToRomanNumerals(9)).toBe('IX');
+    assert.equal(changeToRomanNumerals(9), 'IX');
   })
   test('Ten', () => {
-    expect(changeToRomanNumerals(10)).toBe('X');
+    assert.equal(changeToRomanNumerals(10), 'X');
   })
 })
 
 describe('Larger numbers to 11 to 50', () => {
   test('Ten', () => {
-    expect(changeToRomanNumerals(11)).toBe('XI');
+    assert.equal(changeToRomanNumerals(11), 'XI');
   })
   test('Fity', () => {
-    expect(changeToRomanNumerals(50)).toBe('L');
+    assert.equal(changeToRomanNumerals(50), 'L');
   })
 
 })
 describe('Larger numbers to 50 to 500', () => {
   test('One Hundred ', () => {
-    expect(changeToRomanNumerals(100)).toBe('C');
+    assert.equal(changeToRomanNumerals(100), 'C');
   })
   test('Five Hundred', () => {
-    expect(changeToRomanNumerals(500)).toBe('D');
+    assert.equal(changeToRomanNumerals(500), 'D');
   })
   test('One Thousand', () => {
-    expect(changeToRomanNumerals(1000)).toBe('M');
+    assert.equal(changeToRomanNumerals(1000), 'M');
   })
 })
 describe('Complex Larger numbers', () => {
   test('899', () => {
-    expect(changeToRomanNumerals(899)).toBe('DCCCXCIX');
+    assert.equal(changeToRomanNumerals(899), 'DCCCXCIX');
   })
   test('1990', () => {
-    expect(changeToRomanNumerals(1990)).toBe('MCMXC');
+    assert.equal(changeToRomanNumerals(1990), 'MCMXC');
   })
   test('2007', () => {
-    expect(changeToRomanNumerals(2007)).toBe('MMVII');
+    assert.equal(changeToRomanNumerals(2007), 'MMVII');
   })
   test('2008', () => {
-    expect(changeToRomanNumerals(2008)).toBe('MMVIII');
+    assert.equal(changeToRomanNumerals(2008), 'MMVIII');
   })
   test('2546', () => {
-    expect(changeToRomanNumerals(2546)).toBe('MMDXLVI');
+    assert.equal(changeToRomanNumerals(2546), 'MMDXLVI');
   })
 })

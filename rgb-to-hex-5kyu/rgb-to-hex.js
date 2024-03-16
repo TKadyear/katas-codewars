@@ -1,4 +1,4 @@
-function hexConversion(R, G, B) {
+export function hexConversion(R, G, B) {
   const HEX = "0123456789ABCDEF"
   let conversionHEX = "";
   [R, G, B].forEach(value => {
@@ -12,4 +12,3 @@ function hexConversion(R, G, B) {
   })
   return conversionHEX;
 }
-module.exports = { hexConversion }
